@@ -10,9 +10,7 @@ export class TokenManager {
     private expiresAt = 0;
     private refreshPromise?: Promise<string>;
 
-    constructor(
-        private readonly fetchToken: () => Promise<TokenResponse>
-    ) { }
+    constructor(private readonly fetchToken: () => Promise<TokenResponse>) { }
 
     async getToken(): Promise<string> {
         const now = Date.now();
